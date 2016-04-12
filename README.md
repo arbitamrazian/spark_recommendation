@@ -1,5 +1,5 @@
 # spark_recommendation
-Use spark to provide recommendations on movie data.
+Motivation: To use softimpute-ALS algorithm on spark to provide movie recommendations.
 Disclaimer:  This is meant to be an educational introduction to using spark in a recommendation system.  This procedure is not meant to be used in production.  620MB (the size of the database we use) will fit in memory on modern laptops.  Using a distributed system will slow down training drastically when compared with a standalone solution.
 
 ## Data
