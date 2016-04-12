@@ -16,7 +16,23 @@ Please follow these steps to setup spark on your ec2 account:
 5. Run the following command `./spark-ec2 --key-pair=myuserkeypair --identity-file=myuserkeypair.pem --region=us-east-1 --zone=us-east-1c -s 2 launch mysparkcluster`.  This command will launch 1 spark master along with 2 spark slaves.  It will also run spark UI (http://ec2-XXX-XXX-XXX-XXX.compute-1.amazonaws.com:8080/) and ganglia (http://ec2-XXX-XXX-XXX-XXX.compute-1.amazonaws.com:5080/ganglia/) on your spark master.
 6. To login to your spark master run `./spark-ec2 --key-pair=myuserkeypair --identity-file=myuserkeypair.pem --region=us-east-1 --zone=us-east-1c login mysparkcluster`
 
-After you have setup spark you can now download the MovieLens database by running `wget http://files.grouplens.org/datasets/movielens/ml-latest.zip`.  After you unzip the file you should see the ratings.csv file.  We will now insert this file into HDFS using the following steps.
+After you have setup spark you can now download the MovieLens database by running `wget http://files.grouplens.org/datasets/movielens/ml-latest.zip`.  After you unzip the file you should see the ratings.csv file.  
+
+```
+head ratings.csv
+userId,movieId,rating,timestamp
+1,169,2.5,1204927694
+1,2471,3.0,1204927438
+1,48516,5.0,1204927435
+2,2571,3.5,1436165433
+2,109487,4.0,1436165496
+2,112552,5.0,1436165496
+2,112556,4.0,1436165499
+3,356,4.0,920587155
+3,2394,4.0,920586920
+```
+
+We will now insert this file into HDFS using the following steps.
 
 1. Make a new directory that will house the data. `~/ephemeral-hdfs/bin/hadoop fs -mkdir /user/hadoop`
 2. Make sure that directory was created by running `~/ephemeral-hdfs/bin/hadoop fs -ls /user/hadoop`
