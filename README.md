@@ -8,6 +8,7 @@ We will use the MovieLens database that contains 22M ratings on 33,000 movies by
 ## Setup
 We will deploy our spark cluster on an Amazon EC2 cluster using the spark-ec2 (https://github.com/amplab/spark-ec2) tool.
 Please follow these steps to get started:
+
 1. Create a new user inside the amazon control panel (IAM) and download the keypair. 
 2. Attach a policy (AmazonEC2FullAccess) that will allow spark-ec2 to make changes (add instances) to your account.
 3. Create an Access Key inside the Security Credentials tab and download the content
