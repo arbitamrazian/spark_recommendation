@@ -38,3 +38,6 @@ We will now insert this file into HDFS using the following steps.
 2. Make sure that directory was created by running `~/ephemeral-hdfs/bin/hadoop fs -ls /user/hadoop`
 3. Put your file inside the directory by `~/ephemeral-hdfs/bin/hadoop fs -put ratings.csv /user/hadoop`
 4. Repeat #3 for the other files inside the data directory
+
+
+Now that the data is set we can run `CollaborativeFilteringSpark.py`.  We do this with the following command `~/spark/bin/spark-submit ~/spark_recommendation/CollaborativeFilteringSpark.py`.  Stay tuned for more.
